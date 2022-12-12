@@ -17,17 +17,15 @@ function App() {
     fetch("https://api.imgflip.com/get_memes")
     .then(res => res.json())
     .then((result) => {
-      const random_number = Math.floor(Math.random() * 99) + 1;
+      const random_number = Math.floor(Math.random() * 99);
       setImage(result.data.memes[random_number])})
 
   },[])
   console.log(image)
   return (
     <Container className="d-flex justify-content-between border align-self-center">
-    <Stack className='flex-1'>
     <Image key={image.id} src={image.url}/>
-    </Stack>
-    <Stack gap={5} className="mx-auto">
+    <Stack gap={5} className="mx-auto border">
       <Input placeholder="first"/>
       <Input placeholder="second"/>
     </Stack>

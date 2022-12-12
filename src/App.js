@@ -17,7 +17,7 @@ function App() {
     fetch("https://api.imgflip.com/get_memes")
     .then(res => res.json())
     .then((result) => {
-      const random_number = Math.floor(Math.random() * 99) + 1;
+      const random_number = Math.floor(Math.random() * 99);
       setImage(result.data.memes[random_number])})
 
   },[])

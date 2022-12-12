@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.rubik-spray-font{
+  font-family: 'Rubik Spray Paint', cursive;
+}
+
+.ruluko-font{
+  font-family: 'Ruluko', sans-serif;
+}
+
+.unbounded-font{
+  font-family: 'Unbounded', cursive;
+}

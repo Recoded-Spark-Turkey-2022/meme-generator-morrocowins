@@ -7,7 +7,8 @@ function Input(props) {
   const [message, setMessage] = useState("");
   const [fontSize, setFontSize] = useState(20);
   const [fontFamily, setFontFamily] = useState("");
-
+  const [fontColor, setFontColor] = useState("");
+console.log(fontColor)
   const handleChange = (event) => {
     event.preventDefault();
     setMessage(event.target.value);
@@ -29,6 +30,10 @@ function Input(props) {
   const handleFontFamilyChange = (e) => {
     setFontFamily(e.target.value)
   };
+
+  const handleFontColorChange = (e) => {
+    setFontColor(e.target.value)
+  };
   return (
     <>
       <InputGroup>
@@ -39,7 +44,7 @@ function Input(props) {
           placeholder={props.placeholder}
           value={message}
           onChange={handleChange}
-          style={{ fontSize: `${fontSize}px` }}
+          style={{ fontSize: `${fontSize}px`, color: `${fontColor}`} }
         />
 
         <Button
@@ -61,6 +66,12 @@ function Input(props) {
         <option value={"rubik-spray-font"}>Rubik Spray</option>
         <option value={"ruluko-font"}>Ruluko</option>
         <option value={"unbounded-font"}>unbounded</option>
+      </Form.Select>
+      <Form.Select size="sm" onChange={handleFontColorChange}>
+        <option value="">Change Color</option>
+        <option value={"black"}>Black</option>
+        <option value={"white"}>White</option>
+        <option value={"red"}>Red</option>
       </Form.Select>
     </>
   );

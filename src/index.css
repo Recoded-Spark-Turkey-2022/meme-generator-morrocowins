@@ -23,3 +23,15 @@ code {
 .unbounded-font{
   font-family: 'Unbounded', cursive;
 }
+
+.black-font{
+  color: black;
+}
+
+.white-font{
+  color: white;
+}
+
+.red-font{
+  color: red;
+}

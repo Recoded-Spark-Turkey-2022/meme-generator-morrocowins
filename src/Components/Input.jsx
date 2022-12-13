@@ -5,44 +5,44 @@ import { useState } from "react";
 
 function Input(props) {
   const [message, setMessage] = useState("");
-  const [fontSize, setFontSize] = useState(20);
-  const [fontFamily, setFontFamily] = useState("");
+  // const [fontSize, setFontSize] = useState(20);
+  // const [fontFamily, setFontFamily] = useState("");
 
   const handleChange = (event) => {
     event.preventDefault();
-    setMessage(event.target.value);
+    props.setText(event.target.value);
   };
 
   const convertTextToUpperCase = () => {
     let caps = message.toUpperCase();
     setMessage(caps);
   };
-  const increaseFontSize = () => {
-    setFontSize(fontSize + 1);
-  };
-  const decreaseFontSize = () => {
-    if (fontSize > 15) {
-      setFontSize(fontSize - 1);
-    }
-  };
+  // const increaseFontSize = () => {
+  //   props.fontSizeSet(props.fontSize + 1);
+  // };
+  // const decreaseFontSize = () => {
+  //   if (props.fontSize > 15) {
+  //     props.fontSizeSet(props.fontSize - 1);
+  //   }
+  // };
 
   const handleFontFamilyChange = (e) => {
-    setFontFamily(e.target.value)
+    props.fontSet(e.target.value)
   };
   return (
     <>
       <InputGroup>
         <Form.Control
-          className={fontFamily}
+          className={props.font}
           type="text"
           aria-label="With textarea"
           placeholder={props.placeholder}
-          value={message}
+          value={props.text1}
           onChange={handleChange}
-          style={{ fontSize: `${fontSize}px` }}
+          // style={{ fontSize: `${props.fontSize}px` }}
         />
 
-        <Button
+        {/* <Button
           variant="outline-secondary"
           id="button-addon2"
           onClick={convertTextToUpperCase}
@@ -54,13 +54,12 @@ function Input(props) {
         </Button>
         <Button variant="outline-secondary" id="" onClick={decreaseFontSize}>
           -
-        </Button>
+        </Button> */}
       </InputGroup>
       <Form.Select size="sm" onChange={handleFontFamilyChange}>
         <option value="">Change Font</option>
-        <option value={"rubik-spray-font"}>Rubik Spray</option>
-        <option value={"ruluko-font"}>Ruluko</option>
-        <option value={"unbounded-font"}>unbounded</option>
+        <option value={"impact"}>Impact</option>
+        <option value={"arial"}>Arial</option>
       </Form.Select>
     </>
   );
